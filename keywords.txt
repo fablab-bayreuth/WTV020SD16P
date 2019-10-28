@@ -18,3 +18,4 @@ pauseVoice	KEYWORD2
 mute	KEYWORD2
 unmute	KEYWORD2
 setVolume	KEYWORD2 
+reset   KEYWORD2
