@@ -24,5 +24,5 @@ Modified by Thomas A. Hirsch, October 28, 2019.
 >Renamed .cpp & .h to WTV020SD16P
 >Published to GitHub
 
- - v1.2 - Changes by thirsch
+ - v1.3 - Changes by thirsch
 >Added method reset() again.
