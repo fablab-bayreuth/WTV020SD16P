@@ -4,7 +4,7 @@
  Released into the public domain.
  
   v1.2 - Renamed .cpp & .h to WTV020SD16P
-
+  v1.3 - Added reset again
  */
 
 #ifndef WTV020SD16P_h
@@ -13,7 +13,7 @@
 class WTV020SD16P
 {
 public:
-  WTV020SD16P(int clockPin,int dataPin,int busyPin);
+  WTV020SD16P(int resetPin, int clockPin,int dataPin,int busyPin);
   
   void playVoice(unsigned int voiceNumber);
   void asyncPlayVoice(unsigned int voiceNumber);
@@ -22,11 +22,13 @@ public:
   void mute();
   void unmute();
   void setVolume(unsigned int volume);
+  void reset();
 
 private:
   void sendCommand(unsigned int command);
   void delayMicros(unsigned long delayMicros);
   
+  int _resetPin;
   int _clockPin;
   int _dataPin;
   int _busyPin;

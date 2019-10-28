@@ -5,6 +5,7 @@
  Created by Diego J. Arevalo, August 6th, 2012.
  Modifed by Ryszard Malinowski November 30, 2014.
  Modifed by Dan F  March 2015
+ Modified by Thomas A. Hirsch, October 28, 2019.
   
  Released into the public domain.
  
@@ -18,6 +19,7 @@
 Padawan - Removed reset
 
  v1.2 - Renamed .cpp & .h to WTV020SD16P
+ v1.3 - Added reset again
 
  */
 
@@ -29,9 +31,10 @@ const unsigned int STOP = 0xFFFF;
 const unsigned int VOLUME_MIN = 0xFFF0;
 const unsigned int VOLUME_MAX = 0xFFF7;
 
-WTV020SD16P::WTV020SD16P(int clockPin,int dataPin,int busyPin)
+WTV020SD16P::WTV020SD16P(int resetPin, int clockPin,int dataPin,int busyPin)
 {
   // Save private values from constructor
+  _resetPin=resetPin;
   _clockPin=clockPin;
   _dataPin=dataPin;
   _busyPin=busyPin;
@@ -45,14 +48,25 @@ WTV020SD16P::WTV020SD16P(int clockPin,int dataPin,int busyPin)
   delayMicros(0);
 
   // Set pins
-  
+  pinMode(_resetPin, OUTPUT);
   pinMode(_clockPin, OUTPUT);
   pinMode(_dataPin, OUTPUT);
   pinMode(_busyPin, INPUT);
 
+  reset();
 }
 
-
+void WTV020SD16P::reset() {
+  digitalWrite(_clockPin, LOW);
+  digitalWrite(_resetPin, HIGH);
+  //Reset pulse.
+  digitalWrite(_resetPin, LOW);
+  delay(5);
+  digitalWrite(_resetPin, HIGH);
+  //Reset idle to start bit. 
+  digitalWrite(_clockPin, HIGH);
+  delay(5);
+}
 
 // Public: Play entire song and wait till song finishes
 void WTV020SD16P::playVoice(unsigned int voiceNumber){

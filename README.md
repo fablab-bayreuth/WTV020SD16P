@@ -7,6 +7,7 @@ Library to control a WTV020-SD-16P module to play voices from an Arduino board.
 Created by Diego J. Arevalo, August 6th, 2012.
 Modifed by Ryszard Malinowski November 30, 2014.
 Modifed by Dan F  March 2015
+Modified by Thomas A. Hirsch, October 28, 2019.
   
  Released into the public domain.
  
@@ -22,3 +23,6 @@ Modifed by Dan F  March 2015
  - v1.2 - Changes by r0n_dL
 >Renamed .cpp & .h to WTV020SD16P
 >Published to GitHub
+
+ - v1.2 - Changes by thirsch
+>Added method reset() again.
