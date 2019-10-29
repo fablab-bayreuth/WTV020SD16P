@@ -113,7 +113,6 @@ void WTV020SD16P::setVolume(unsigned int volume){
   }
 }
 
-
 // Private: Send command to sound module
 void WTV020SD16P::sendCommand(unsigned int command) {
   
@@ -143,7 +142,6 @@ void WTV020SD16P::sendCommand(unsigned int command) {
   delayMicros(1900);
 }
 
-
 // Private: Wait specified time since the last wait
 void WTV020SD16P::delayMicros(unsigned long delayMicros) {
   unsigned long stopMicros;
@@ -166,4 +164,3 @@ void WTV020SD16P::delayMicros(unsigned long delayMicros) {
   }
   
 }
-  
