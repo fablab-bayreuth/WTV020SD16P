@@ -5,7 +5,7 @@
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
-WTV020SD16P	KEYWORD1
+WTV020SD16P	KEYWORD1		DATA_TYPE
 
 #######################################
 # Methods and Functions (KEYWORD2)
