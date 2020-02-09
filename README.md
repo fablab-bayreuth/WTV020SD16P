@@ -26,3 +26,6 @@ Modified by Thomas A. Hirsch, October 28, 2019.
 
  - v1.3 - Changes by thirsch
 >Added method reset() again.
+
+ - v1.4 - Changes by thirsch
+>Using `delayMicros()` instead of `delay` to avoid crashes on Arudino Pro Mini. (#1)

@@ -5,6 +5,7 @@
  
   v1.2 - Renamed .cpp & .h to WTV020SD16P
   v1.3 - Added reset again
+  v1.4 - Fixed crashes on Arduino Pro Mini
  */
 
 #ifndef WTV020SD16P_h
