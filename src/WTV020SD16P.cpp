@@ -61,11 +61,11 @@ void WTV020SD16P::reset() {
   digitalWrite(_resetPin, HIGH);
   //Reset pulse.
   digitalWrite(_resetPin, LOW);
-  delay(5);
+  delayMicros(5000);
   digitalWrite(_resetPin, HIGH);
   //Reset idle to start bit. 
   digitalWrite(_clockPin, HIGH);
-  delay(5);
+  delayMicros(5000);
 }
 
 // Public: Play entire song and wait till song finishes
